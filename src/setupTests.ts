@@ -11,3 +11,6 @@ jest.mock('react-native-reanimated', () => {
 });
 
 jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+
+// @ts-ignore
+global.window = {};

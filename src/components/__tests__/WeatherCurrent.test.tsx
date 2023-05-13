@@ -3,12 +3,12 @@ import React from 'react';
 import {act, fireEvent, render, waitFor} from '@testing-library/react-native';
 import {useNavigation} from '@react-navigation/native';
 import LocationService from '../../services/LocationService';
-import { Colors } from "../../constants";
+import {Colors} from '../../constants';
 
 jest.mock('@react-navigation/native', () => {
   return {
     ...jest.requireActual<object>('@react-navigation/native'),
-    useNavigation: jest.fn().mockReturnValue({navigation: jest.fn()}),
+    useNavigation: jest.fn().mockReturnValue({navigate: jest.fn()}),
   };
 });
 
