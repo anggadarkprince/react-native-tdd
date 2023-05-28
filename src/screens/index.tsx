@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './HomeScreen';
 import WeatherScreen from './WeatherScreen';
 
-type RootStackParamList = {
+export type RootStackParamList = {
   Home: undefined;
   Weather: {latitude: number; longitude: number};
 };

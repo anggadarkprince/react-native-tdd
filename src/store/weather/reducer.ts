@@ -1,4 +1,4 @@
-import {Actions, ActionTypes} from './action';
+import {Actions, ActionTypes} from './actions';
 import Status from '../../types/Status';
 import {nullWeather, WeatherType} from '../../types/Weather';
 

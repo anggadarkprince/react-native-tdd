@@ -4,7 +4,7 @@ import {
   fetchWeather,
   fetchWeatherFailure,
   fetchWeatherSuccess,
-} from '../action';
+} from '../actions';
 import {nullWeather} from '../../../types/Weather';
 import WeatherService from '../../../services/WeatherService';
 

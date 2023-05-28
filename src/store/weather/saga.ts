@@ -4,7 +4,7 @@ import {
   fetchWeatherFailure,
   fetchWeatherSuccess,
   WEATHER_START_TYPE,
-} from './action';
+} from './actions';
 import weatherService from '../../services/WeatherService';
 
 export default function* saga() {

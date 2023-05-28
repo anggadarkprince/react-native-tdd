@@ -1,7 +1,7 @@
 import Status from '../../../types/Status';
 import { nullWeather, WeatherType } from "../../../types/Weather";
 import reducer from '../reducer';
-import { fetchWeather, fetchWeatherFailure, fetchWeatherReset, fetchWeatherSuccess } from "../action";
+import { fetchWeather, fetchWeatherFailure, fetchWeatherReset, fetchWeatherSuccess } from "../actions";
 
 describe('Store/weather', () => {
   const initialState = {

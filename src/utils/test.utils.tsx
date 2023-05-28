@@ -1,16 +1,24 @@
-import {createStore} from 'redux';
-import rootReducer from '../store/reducers';
+import {applyMiddleware, createStore, Middleware} from 'redux';
+import rootReducer, {StateType} from '../store/reducers';
 import React, {ElementType, ReactElement} from 'react';
 import {render, RenderOptions} from '@testing-library/react-native';
 import {Provider} from 'react-redux';
 import {runSaga} from 'redux-saga';
 
-const store = createStore(rootReducer);
-
 type Action = {
   type?: any;
   payload?: any;
 };
+
+const store = createStore(rootReducer);
+
+export function mockStore(interceptor?: jest.Mock) {
+  const logger: Middleware<{}, StateType> = () => (next) => (action) => {
+    interceptor?.(action);
+    return next(action);
+  };
+  return createStore(rootReducer, undefined, applyMiddleware(logger));
+}
 
 export async function recordSaga(worker: any, initialAction: Action) {
   const dispatched: Array<Function> = [];
